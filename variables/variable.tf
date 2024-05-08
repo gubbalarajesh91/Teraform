@@ -11,13 +11,12 @@ variable "instance_type" {
 }
 
 variable "tags" {
-  type = list
   default = {
     Project = "Expense"
-     Environment = "Dev"
-     Module = "DB"
-     Name = "DB"
-    }
+    Environment = "Dev"
+    Module = "DB"
+    Name = "DB"
+  }
 }
 
 #variable "availability_zone_names" {
