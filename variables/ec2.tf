@@ -1,9 +1,10 @@
 #1. Command line 
 #2.tfvars [mention file name if its not terrform.tfvars
 #terraform apply -var-file="testing.tfvars"
-#3. default values
-#4. export TF_VAR_image_id=ami-abc123
+#3. ENV variable
+#export TF_VAR_image_id=ami-abc123
 #export TF_VAR_instance_type=t3.large
+#4. variable default
 
 #terraform plan
 # resource <resorce-type <resource-name>
@@ -48,6 +49,5 @@ resource "aws_security_group" "allow_ssh" {
 }
 
 #command line variables
-
 #terraform plan -var="instance_type=t3.small"
 #no spaces in var for command line
