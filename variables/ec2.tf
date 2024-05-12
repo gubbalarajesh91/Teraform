@@ -12,13 +12,15 @@ resource "aws_instance" "db" {
 }
 
 resource "aws_security_group" "allow_ssh" {
-    name = "allow_ssh"
-    description = "allowing ssh access"
+    name = var.sg_name
+    description = var.sg_description
+
+    #blocked map
     ingress {
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    from_port        = var.ssh_port
+    to_port          = var.ssh_port
+    protocol         = var.protocol
+    cidr_blocks      = var.cidr_blocks
     #ipv6_cidr_blocks = ["::/0"]
     }
 
