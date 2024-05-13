@@ -1,3 +1,4 @@
+#ec2 variable
 variable "instance_names" {
   type = list
   default = ["db", "backend", "frontend"]
@@ -26,6 +27,7 @@ variable "common_tags" {
   }
 }
 
+#sg variable
 variable "sg_name" {
   default = "allow_ssh"
 }
@@ -44,6 +46,17 @@ variable "protocol" {
 
 variable "cidr_blocks" {
   default = ["0.0.0.0/0"]
+}
+
+#r53 variables
+variable "zone_id" {
+  default = "Z01554241D4PXADZBZ1KY"
+  
+}
+
+variable "domain_name" {
+  default = "indix.store"
+  
 }
 
 
