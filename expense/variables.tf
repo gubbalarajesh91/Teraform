@@ -1,4 +1,4 @@
-variable "instance_name" {
+variable "instance_names" {
   type = list
   default = ["db", "backend", "frontend"]
 }
@@ -20,6 +20,8 @@ variable "common_tags" {
     Project = "Expense"
     Environment = "Dev"
     Terraform = "true"
+    #Module = "DB"
+    #Name = "DB"
     
   }
 }
