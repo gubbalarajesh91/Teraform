@@ -5,5 +5,5 @@ resource "aws_route53_record" "expense" {
   #Interpolation "Hello, ${var.name}!"
   type    = "A"
   ttl     = 1
-  records = [aws_eip.lb.public_ip]
+  records = var.instance_names[count.index] == "frontend" ? [aws_instance.Expense[count.index].public_ip] : [aws_instance.Expense[count.index].private_ip]
 }
