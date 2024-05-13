@@ -1,3 +1,4 @@
 output "ami_details" {
-  value = aws_ami.aws_id
+  value = data.aws_ami.ami_id.id
 }
+
