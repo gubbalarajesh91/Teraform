@@ -1,0 +1,2 @@
+provisioner "remote-exec"
+Create Db, Install ansible, pull db playbook configure itself

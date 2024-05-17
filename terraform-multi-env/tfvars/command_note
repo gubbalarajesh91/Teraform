@@ -16,3 +16,5 @@ terraform init -reconfigure -backend-config=prod/backend.tf
 IF we change env
 terraform init -backend-config=prod/backend.tf
 terraform plan -var-file=prod/prod.tfvars
+terraform apply -var-file=prod/prod.tfvars
+terraform destroy -var-file=prod/prod.tfvars -auto-approve
