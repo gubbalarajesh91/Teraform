@@ -1,7 +1,7 @@
 data "aws_ami" "ami_info" {
 
     most_recent = true
-    owners = ["973714476881"]
+    owners = ["973714476881"] #change own Ower number
 
     filter {
         name   = "name"
