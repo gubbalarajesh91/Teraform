@@ -50,7 +50,35 @@ variable "public_subnet_cidrs" {
     }
 }
   
-variable "public_subnet_cidrs_tags" {
+variable "public_subnet_cidr_tags" {
+    type = map
+    default = {}
+}
+
+##### Private Subnet ######
+variable "private_subnet_cidrs" {
+    type = list
+    validation {
+        condition = length(var.pivate_subnet_cidrs) == 2
+        error_message = "Please provide 2 valid private subnet CIDR"
+    }
+}
+  
+variable "private_subnet_cidr_tags" {
+    type = map
+    default = {}
+}
+
+##### Database Subnet ######
+variable "Database_subnet_cidrs" {
+    type = list
+    validation {
+        condition = length(var.Database_subnet_cidrs) == 2
+        error_message = "Please provide 2 valid Database subnet CIDR"
+    }
+}
+  
+variable "Database_subnet_cidr_tags" {
     type = map
     default = {}
 }
