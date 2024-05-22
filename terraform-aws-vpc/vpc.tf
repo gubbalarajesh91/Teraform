@@ -77,7 +77,7 @@ resource "aws_internet_gateway" "gw" {
     )
 }
 
-
+####### Elastic IP ######
 resource "aws_eip" "nat" {
   domain = "vpc"
   
@@ -213,3 +213,5 @@ resource "aws_route_table_association" "Database" {
   subnet_id      = element(aws_subnet.Database[*].id, count.index)
   route_table_id = aws_route_table.Database.id
 }
+
+######### Create Peering connections ###########
