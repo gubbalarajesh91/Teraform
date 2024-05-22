@@ -59,7 +59,7 @@ variable "public_subnet_cidr_tags" {
 variable "private_subnet_cidrs" {
     type = list
     validation {
-        condition = length(var.pivate_subnet_cidrs) == 2
+        condition = length(var.private_subnet_cidrs) == 2
         error_message = "Please provide 2 valid private subnet CIDR"
     }
 }
@@ -81,4 +81,35 @@ variable "Database_subnet_cidrs" {
 variable "Database_subnet_cidr_tags" {
     type = map
     default = {}
+}
+
+### Nat Gateway tags#####
+variable "nat_gateway_tags" {
+    type = map
+    default = {}
+  
+}
+
+######### Public Route table #######
+
+variable "public_route_table_tags" {
+    type = map
+    default = {}
+  
+}
+
+######### Private Route table #######
+
+variable "private_route_table_tags" {
+    type = map
+    default = {}
+  
+}
+
+######### Database Route table #######
+
+variable "Database_route_table_tags" {
+    type = map
+    default = {}
+  
 }
