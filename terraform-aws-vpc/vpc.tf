@@ -77,6 +77,19 @@ resource "aws_internet_gateway" "gw" {
     )
 }
 
+resource "aws_db_subnet_group" "default" {
+  name       = "${local.resource_name}"
+  subnet_ids = aws_subnet.Database[*].id
+
+  tags = merge(
+    var.common_tags,
+    var.Database_subnet_group_tags,
+    {
+      Name = "${local.resource_name}"
+    }
+    )
+}
+
 ####### Elastic IP ######
 resource "aws_eip" "nat" {
   domain = "vpc"
@@ -176,7 +189,7 @@ resource "aws_route_table" "Database" {
   )
 }
 
-
+### Create Route ####
 resource "aws_route" "public_route" {
   route_table_id            = aws_route_table.public.id
   destination_cidr_block    = "0.0.0.0/0"
