@@ -78,7 +78,7 @@ resource "aws_internet_gateway" "gw" {
 }
 
 resource "aws_db_subnet_group" "default" {
-  name       = "${local.resource_name}"
+  name = "${local.resource_name}"
   subnet_ids = aws_subnet.Database[*].id
 
   tags = merge(
